@@ -1,16 +1,21 @@
 @charset "UTF-8";
 @import "../base/index.less";
 
+@font-face {
+  font-family: 'iconfont';  /* project id 389797 */
+  src: url('//at.alicdn.com/t/font_389797_fmdel939ye0o1or.eot');
+  src: url('//at.alicdn.com/t/font_389797_fmdel939ye0o1or.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_389797_fmdel939ye0o1or.woff') format('woff'),
+  url('//at.alicdn.com/t/font_389797_fmdel939ye0o1or.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_389797_fmdel939ye0o1or.svg#iconfont') format('svg');
+}
 .@{css-prefix}home-header{
   position: fixed;
-  transform: translateZ(0);
   top: 0;
   z-index: 4;
   height: 40px;
   width: 100%;
   background: #00a2ea;
-  display: flex;
-  flex-direction: row;
 
   .iconfont {
     font-family:"iconfont";
@@ -19,31 +24,17 @@
     color: #ffffff;
     margin-right: 3px;
   }
-  .header-icon{
-    flex:1;
-    text-align: center;
-    >i{
-      line-height: 53px;
-    }
-    >span{
-      color: #ffffff;
-      font-size: 14px;
-      margin-left: 3px;
-    }
-    .collection{
-      color: #FFCE00;
-    }
+  .home-header-left {
+    float: left;
+    margin-left: 30px;
   }
-  .header-cont {
-    flex: 6;
-    padding-left: 10px;
-    >p{
-      line-height: 50px;
-      color: #ffffff;
-      font-size:16px;
-      span{
-        font-size: 18px;
-      }
-    }
+  .home-header-right {
+    float: right;
+  }
+  &:after {
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
   }
 }

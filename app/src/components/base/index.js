@@ -22,7 +22,6 @@ class CYComponent extends Component {
     } else {
       throw e;
     }
-
   }
 
   // init internal state from props
@@ -64,8 +63,7 @@ class CYComponent extends Component {
    * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md
    */
   storeRef(name) {
-    return (c) =>
-    {
+    return (c) => {
       this[name] = c;
     };
   }
@@ -79,18 +77,19 @@ class CYComponent extends Component {
   render() {
     return <div />;
   }
-  }
+}
 
-  CYComponent.defaultProps = {
-    onClick: () => {},
-    onError : null,
-    className: '',
-  };
+CYComponent.defaultProps = {
+  onClick: () => {
+  },
+  onError: null,
+  className: '',
+};
 
-  CYComponent.propTypes = {
-    onClick: PropTypes.func,
-    onError: PropTypes.func,
-    className: PropTypes.string,
-  };
+CYComponent.propTypes = {
+  onClick: PropTypes.func,
+  onError: PropTypes.func,
+  className: PropTypes.string,
+};
 
-  export default CYComponent;
+export default CYComponent;

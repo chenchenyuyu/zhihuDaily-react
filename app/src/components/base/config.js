@@ -1,3 +1,3 @@
 export default {
-    cssPrefix: 'cy-',
-}
+  cssPrefix: 'cy-',
+};
