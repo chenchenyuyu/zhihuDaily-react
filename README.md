@@ -3,5 +3,9 @@
 技术栈：
 * react
 * react-redux
-* react-router
+* react-router-dom
 * axios
+* less
+npm install
+启动开发环境
+npm start 
