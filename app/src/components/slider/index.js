@@ -70,17 +70,17 @@ class Slider extends CYComponent {
 
   render() {
     const count = this.props.items.length;
-    const itemNodes = this.props.items.map(
-      (item, index) => {
-        return <SliderItem item={item} count={count} key={'item' + index } />; });
+    const itemNodes = this.props.items.map((item, index) => {
+      return <SliderItem item={item} count={count} key={`item${index}`} />;
+    });
     const arrowsNode = <SliderArrows turn={this.turn} />;
     const dotsNode = <SliderDots turn={this.turn} count={count} nowLocal={this.state.nowLocal} />;
     const style = {
-      left: (-100 * this.state.nowLocal) + '%',
-      transitionDuration: this.props.speed + 's',
-      width: (this.props.items.length * 100) + '%',
+      left: `${(-100 * this.state.nowLocal)}%`,
+      transitionDuration: `${this.props.speed}s`,
+      width: `${(this.props.items.length * 100)}%`,
     };
-    console.log('iiii', dotsNode);
+    // console.log('iiii', dotsNode);
 
     return (
       <div

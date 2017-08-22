@@ -11,21 +11,20 @@ class SliderDots extends CYComponent {
     const dotNodes = [];
     const { count, nowLocal } = this.props;
     // console.log('111111', this.props.nowLocal);
+
     for (let i = 0; i < count; i += 1) {
       dotNodes[i] = (
         <span
-          key={'dot' + i}
-          className={'slider-dot' + ' ' + (i === nowLocal ? 'slider-dot-selected' : ' ')}
+          key={`dot${i}`}
+          className={`slider-dot ${(i === nowLocal ? 'slider-dot-selected' : ' ')}`}
           onClick={this.handleDotClick.bind(this, i)}
         />
       );
     }
-   // console.log('dotNodes', dotNodes);
     return (
-
-      <div className="slider-dots-wrap"
-        {...dotNodes}
-      />
+      <div className="slider-dots-wrap">
+        {dotNodes}
+      </div>
     );
   }
 }

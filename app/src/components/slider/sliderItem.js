@@ -4,7 +4,7 @@ import CYComponent from '../base/index';
 class SliderItem extends CYComponent {
   render() {
     const { count, item } = this.props;
-    const width = (100 / count) + '%';
+    const width = `${(100 / count)}%`;
     // console.log('width', width);
     return (
       <li className="slider-item" style={{ width }}>
