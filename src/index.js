@@ -1,42 +1,23 @@
-import 'core-js/fn/object/assign';
 import React from 'react';
-import {
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
 import { render } from 'react-dom';
-// import thunk from 'redux-thunk';
-// import {createStore, applyMiddleware } from 'redux';
-import axios from 'axios';
-// import { Provider } from 'react-redux';
-import IndexPage from './pages/indexPage';
-import { pageUrl } from './utils/url';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+// import 'kz-icomoon-font';
+import App from './app';
+// import ds from './ds/index';
+// import reducers from './reducers';
 
-// const store = createStore(reducer, applyMiddleware(thunk));
-window.axios = axios;
-// Render the main component into the dom
+const initialState = window.INITIAL_STATE;
+const middleware = [thunk];
+const store = createStore(
+  initialState,
+  applyMiddleware(...middleware),
+);
 
-const pages = [
-  {
-    link: pageUrl('daily/indexPage/'),
-    page: IndexPage,
-  }
-
-];
-console.log('pages',pages);
 render(
-<div>
-  <Switch>
-    {
-      pages.map((page, key) => (
-        <Route
-          key={`daily-pages-${key}`}
-          path={page.link}
-          component={page.page}
-        />
-      ))
-    }
-  </Switch>
-</div>
-  ,document.getElementById('app'));
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root'),
+);
