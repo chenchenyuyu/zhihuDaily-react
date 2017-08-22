@@ -6,6 +6,10 @@
 * react-router-dom
 * axios
 * less
+
+---
 npm install
+
 启动开发环境
+
 npm start 
