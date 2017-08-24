@@ -1,9 +1,9 @@
 import React from 'react';
 // import { connect } from 'react-redux';
-import CYComponent from '../../components/base/index';
-import HomeHeader from '../../components/home-header/index';
-import ListDefault from '../../components/list-default/index';
-// import SideBar from '../components/side-bar';
+import CYComponent from 'components/base/index';
+import HomeHeader from 'components/home-header/index';
+import ListDefault from 'components/list-default/index';
+// import SideBar from 'components/side-bar';
 import Img from '../../chenyu.png';
 
 const res = [

@@ -7,9 +7,17 @@
 * axios
 * less
 
----
+# Usage
+
+* 项目根目录安装依赖
 npm install
 
-启动开发环境
+* 浏览器访问localhost:8000
+npm run dev
 
-npm start 
+* 打包编译生成静态资源
+npm run build
+
+# LISENCE
+
+本项目仅供交流和学习使用
