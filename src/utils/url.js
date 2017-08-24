@@ -1,4 +1,4 @@
-const urlPrefix = 'cy_v1';
+const urlPrefix = 'v0_';
 export const pageUrl = url => `${urlPrefix}${url}`;
 
 export default {

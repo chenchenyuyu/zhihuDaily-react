@@ -10,7 +10,7 @@ import {
 // import {createStore, applyMiddleware } from 'redux';
 import axios from 'axios';
 import IndexPage from './pages/indexPage/index';
-import ListDefault from '../../../components/list-default/index';
+// import ListDefault from '../../../components/list-default/index';
 import { pageUrl } from './utils/url';
 
 // const store = createStore(reducer, applyMiddleware(thunk));
@@ -22,23 +22,17 @@ const pages = [
     link: pageUrl('daily/indexPage/'),
     page: IndexPage,
   },
-  {
-    link: pageUrl('daily/listDefault/'),
-    page: ListDefault,
-  }
-
 ];
-console.log('pages', IndexPage);
-
-console.log('children', children);
+console.log('pages', pages);
 class App extends React.Component {
   render() {
     return (
       <div>
+        <Router>
         <Switch>
-          <Router>
             {
-              pages.map((page, key) => (
+              pages.map(
+                (page, key) => (
                   <Route
                     key={`daily-${key}`}
                     path={page.link}
@@ -46,8 +40,8 @@ class App extends React.Component {
                   />
               ))
             }
-          </Router>
         </Switch>
+        </Router>
       </div>
     )
 
