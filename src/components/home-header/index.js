@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import CYComponent from '../base/index';
 import './style.less';
 
@@ -41,4 +41,4 @@ class HomeHeader extends CYComponent {
   }
 }
 
-export default connect()(HomeHeader);
+export default HomeHeader;

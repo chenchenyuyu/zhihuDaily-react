@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import CYComponent from '../base/index';
 import './style.less';
 import Img from '../../chenyu.png';
@@ -47,5 +47,5 @@ class SideBar extends CYComponent {
   }
 }
 
-export default connect()(SideBar);
+export default SideBar;
 

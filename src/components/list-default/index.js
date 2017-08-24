@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import CYComponent from '../base/index';
 import Slider from '../../components/slider/index';
 import ListItem from '../../components/list-item';
@@ -37,7 +37,5 @@ class ListDefault extends CYComponent {
   }
 }
 
-ListDefault.propTypes = {};
-
-export default connect()(ListDefault);
+export default ListDefault;
 

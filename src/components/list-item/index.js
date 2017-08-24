@@ -1,14 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router';
-import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+// import { connect } from 'react-redux';
 import CYComponent from '../base/index';
 import './style.less';
 
-class ListItem extends CYComponent {
+ class ListItem extends CYComponent {
   render() {
     const item = this.props.item;
     return (
-      <Link className="list-item-wrap">
+      <Link to="/detail" className="list-item-wrap">
         <div className="list-item-wrap">
           <li className="list-detail-box">
             <div className="list-content-box">
@@ -30,5 +30,5 @@ class ListItem extends CYComponent {
   }
 }
 
-export default connect()(ListItem);
+export default ListItem;
 
