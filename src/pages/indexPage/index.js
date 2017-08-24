@@ -3,8 +3,7 @@ import React from 'react';
 import CYComponent from 'components/base/index';
 import HomeHeader from 'components/home-header/index';
 import ListDefault from 'components/list-default/index';
-// import SideBar from 'components/side-bar';
-import Img from '../../chenyu.png';
+import Img from '../../components/list-default/images/chenyu.png';
 
 const res = [
   { date: '今日新闻', stories: [{ id: 0, title: '1111', pic: Img }, { id: 1, title: '2111', pic: Img }] },

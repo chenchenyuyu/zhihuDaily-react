@@ -3,12 +3,26 @@ import { Link } from 'react-router';
 // import { connect } from 'react-redux';
 import CYComponent from '../base/index';
 import './style.less';
-import Img from '../../chenyu.png';
+import Img from '../list-default/images/chenyu.png';
 
+const sideRes = [
+  { name: 'aaa' },
+  { name: 'bbb' },
+  { name: 'ccc' },
+  { name: 'ddd' },
+  { name: 'bb' },
+  { name: 'cc' },
+  { name: 'aa' },
+  { name: 'fdfbb' },
+  { name: 'ccdff' },
+  { name: 'aaddf' },
+  { name: 'bbbdd' },
+  { name: 'cccggg' },
+];
 class SideBar extends CYComponent {
   render() {
     const className = this.classname('side-bar');
-    const sideList = this.props.sideList;
+    // const sideList = sideRes;
     return (
       <div className={className}>
         {/* 侧边栏的头部 */}
@@ -32,7 +46,7 @@ class SideBar extends CYComponent {
         {/* 侧边栏列表 */}
         <ul className="side-bar-list">
           {
-            sideList.map(item =>
+            sideRes.map(item =>
               <Link key={item.name}>
                 <li>
                   <p>{item.name}</p>

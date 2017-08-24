@@ -4,11 +4,17 @@ import CYComponent from '../base/index';
 import Slider from '../../components/slider/index';
 import ListItem from '../../components/list-item';
 import './style.less';
+import Img from './images/chenyu.png';
+
+const res = [
+  { date: '今日新闻', stories: [{ id: 0, title: '1111', pic: Img }, { id: 1, title: '2111', pic: Img }] },
+  { date: '2017-8-1', stories: [{ id: 2, title: '2222', pic: Img }, { id: 3, title: '2222', pic: Img }] },
+  { date: '2017-8-2', stories: [{ id: 4, title: '3333', pic: Img }, { id: 5, title: '2222', pic: Img }] },
+];
 
 class ListDefault extends CYComponent {
   render() {
-    const dataList = this.props.dataList;
-    console.log('dddd', dataList);
+    // const dataList = res;
     return (
       <div className="main-list">
         <Slider
@@ -21,7 +27,7 @@ class ListDefault extends CYComponent {
         />
         {/* 列表 */}
         {
-          dataList.map((item, index) =>
+         res.map((item, index) =>
             <div className="list-box" key={index}>
               <h2>{item.date}</h2>
               <ul key={item.date}>
