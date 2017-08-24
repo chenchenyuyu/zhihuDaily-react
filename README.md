@@ -11,15 +11,15 @@
 
 * 项目根目录安装依赖
 
-npm install
+  npm install
 
 * 浏览器访问localhost:8000
 
-npm run dev
+  npm run dev
 
 * 打包编译生成静态资源
 
-npm run build
+  npm run build
 
 # LISENCE
 本项目仅供交流和学习使用
