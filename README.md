@@ -21,3 +21,4 @@ npm run build
 # LISENCE
 
 本项目仅供交流和学习使用
+[MIT](LICENSE)
