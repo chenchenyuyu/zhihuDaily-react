@@ -5,45 +5,47 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { render } from 'react-dom';
+// import { connect } from 'react-redux';
 // import thunk from 'redux-thunk';
 // import {createStore, applyMiddleware } from 'redux';
 import axios from 'axios';
-// import { Provider } from 'react-redux';
-import IndexPage from './pages/indexPage';
+import IndexPage from './pages/indexPage/index';
+import ListDefault from '../../../components/list-default/index';
 import { pageUrl } from './utils/url';
 
 // const store = createStore(reducer, applyMiddleware(thunk));
 window.axios = axios;
 // Render the main component into the dom
+
+const pages = [
+  {
+    link: pageUrl('daily/indexPage/'),
+    page: IndexPage,
+  },
+  {
+    link: pageUrl('daily/listDefault/'),
+    page: ListDefault,
+  }
+
+];
+console.log('pages', IndexPage);
+
+console.log('children', children);
 class App extends React.Component {
-
   render() {
-    const pages = [
-      {
-        link: pageUrl('daily/indexPage/'),
-        page: IndexPage,
-      }
-
-    ];
-// console.log('pages', IndexPage);
-    const children = [];
-    pages.forEach((page) => {
-      children.push(
-        <Route
-          key={children.length}
-          path={page.link}
-          component={page.page}
-        />,
-      );
-    });
-    console.log('children', children);
     return (
       <div>
         <Switch>
           <Router>
-            {children}
+            {
+              pages.map((page, key) => (
+                  <Route
+                    key={`daily-${key}`}
+                    path={page.link}
+                    component={page.page}
+                  />
+              ))
+            }
           </Router>
         </Switch>
       </div>
@@ -55,4 +57,4 @@ class App extends React.Component {
 
 
 
-export default connect()(App);
+export default App;
