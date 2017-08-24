@@ -18,7 +18,7 @@ import './style.less';
               if (item.pic) {
                 return (
                   <div className="list-img-box">
-                    <img src={item.pic} alt="c" />
+                    <img src={item.pic} alt="pic" />
                   </div>
                 );
               }

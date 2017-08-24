@@ -12,7 +12,7 @@ import axios from 'axios';
 import IndexPage from './pages/indexPage/index';
 // import ListDefault from '../../../components/list-default/index';
 // import { pageUrl } from './utils/url';
-
+import '../src/common/app.less';
 // const store = createStore(reducer, applyMiddleware(thunk));
 window.axios = axios;
 // Render the main component into the dom
