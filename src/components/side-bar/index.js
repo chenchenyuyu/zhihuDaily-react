@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 // import { connect } from 'react-redux';
 import CYComponent from '../base/index';
 import './style.less';
@@ -26,7 +26,7 @@ class SideBar extends CYComponent {
     return (
       <div className={className}>
         {/* 侧边栏的头部 */}
-        <Link>
+        <Link to="/theme">
           <div className="side-bar-header">
             <div className="user">
               <img src={Img} alt="avatar" />

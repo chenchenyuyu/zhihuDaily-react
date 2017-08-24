@@ -28,10 +28,10 @@ class App extends React.Component {
     return (
       <div>
         <Router>
-          <Route path="/" component={(props) => (
+          <Route path='/' component={(props) => (
             <SidePage {...props}>
               <Switch>
-                <Route path='/list' component={ListDefault} />
+                <Route exact path='/' component={ListDefault} />
               </Switch>
             </SidePage>
           )}/>
