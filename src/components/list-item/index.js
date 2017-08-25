@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // import { connect } from 'react-redux';
 import CYComponent from '../base/index';
 import './style.less';
@@ -8,7 +8,7 @@ import './style.less';
   render() {
     const item = this.props.item;
     return (
-      <Link to="/detail" className="list-item-wrap">
+      <a className="list-item-wrap">
         <div className="list-item-wrap">
           <li className="list-detail-box">
             <div className="list-content-box">
@@ -25,7 +25,7 @@ import './style.less';
             })()}
           </li>
         </div>
-      </Link>
+      </a>
     );
   }
 }

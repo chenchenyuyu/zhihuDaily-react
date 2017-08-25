@@ -6,16 +6,11 @@ import {
   Switch,
 } from 'react-router-dom';
 import '../src/common/app.less';
-// import { connect } from 'react-redux';
-// import thunk from 'redux-thunk';
-// import {createStore, applyMiddleware } from 'redux';
-import axios from 'axios';
-// import IndexPage from './pages/indexPage/index';
+import { connect } from 'react-redux';
 import ListDefault from 'components/list-default/index';
 // import { pageUrl } from './utils/url';
 import SidePage from "./pages/sidePage/index";
-// const store = createStore(reducer, applyMiddleware(thunk));
-window.axios = axios;
+
 
 // const pages = [
 //   {
@@ -28,13 +23,11 @@ class App extends React.Component {
     return (
       <div>
         <Router>
-          <Route path='/' component={(props) => (
-            <SidePage {...props}>
+            <SidePage>
               <Switch>
                 <Route exact path='/' component={ListDefault} />
               </Switch>
             </SidePage>
-          )}/>
         </Router>
       </div>
     )
@@ -45,4 +38,4 @@ class App extends React.Component {
 
 
 
-export default App;
+export default connect()(App);

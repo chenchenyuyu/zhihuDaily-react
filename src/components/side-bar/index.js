@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-// import { connect } from 'react-redux';
+// import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import CYComponent from '../base/index';
 import './style.less';
 import Img from '../list-default/images/chenyu.png';
@@ -26,12 +26,12 @@ class SideBar extends CYComponent {
     return (
       <div className={className}>
         {/* 侧边栏的头部 */}
-        <Link to="/theme">
+        <a>
           <div className="side-bar-header">
             <div className="user">
               <img src={Img} alt="avatar" />
               <span>chenyu</span>
-              <Link to="/"><i className="iconfont home">&#xe606;</i></Link>
+              <a><i className="iconfont home">&#xe606;</i></a>
             </div>
             <div className="collection">
               <i className="iconfont">&#xe86e;</i>
@@ -42,17 +42,17 @@ class SideBar extends CYComponent {
               <span>离线下载</span>
             </div>
           </div>
-        </Link>
+        </a>
         {/* 侧边栏列表 */}
         <ul className="side-bar-list">
           {
             sideRes.map(item =>
-              <Link key={item.name}>
+              <a key={item.name}>
                 <li>
                   <p>{item.name}</p>
                   <span className="iconfont addIcon">&#xe6df;</span>
                 </li>
-              </Link>)
+              </a>)
           }
         </ul>
 
@@ -61,5 +61,5 @@ class SideBar extends CYComponent {
   }
 }
 
-export default SideBar;
+export default connect(SideBar);
 

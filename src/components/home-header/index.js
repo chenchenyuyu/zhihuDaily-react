@@ -1,12 +1,13 @@
 import React from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import CYComponent from '../base/index';
+import { toggleSidebar } from "../../redux/actions/index";
 import './style.less';
 
 class HomeHeader extends CYComponent {
   constructor(props) {
     super(props);
-    this.autoBind('changeMode');
+    this.autoBind('changeMode', 'toggleSidebar');
   }
   changeMode() {
     const { night_style } = this.props;
@@ -16,6 +17,12 @@ class HomeHeader extends CYComponent {
       window.document.getElementById('app').className = 'night-style';
     }
   }
+  toggleSidebar() {
+    if (this.props.dispatch) {
+      this.props.dispatch(toggleSidebar());
+    }
+  }
+
 
   render() {
     const { title, iconDisplay } = this.props;
@@ -23,7 +30,7 @@ class HomeHeader extends CYComponent {
     return (
       <div className={className}>
         <div className="home-header-left">
-          <i className="iconfont">&#xe890;</i>
+          <i className="iconfont" onClick={this.toggleSidebar}>&#xe890;</i>
           <span>{title}</span>
         </div>
         {(() => {
@@ -41,4 +48,4 @@ class HomeHeader extends CYComponent {
   }
 }
 
-export default HomeHeader;
+export default connect()(HomeHeader);

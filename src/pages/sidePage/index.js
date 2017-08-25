@@ -4,7 +4,7 @@ import SideBar from '../../components/side-bar/index';
 import HomeHeader from '../../components/home-header';
 
 // 模拟一个react-router-dom4.0 this.props.match.params 2-13的随机数字
-const params = Math.floor(Math.random()*13+2); //1-10
+const params = Math.floor(Math.random() * 13 + 2); //1-10
 
 class SidePage extends CYComponent {
   constructor(props) {
@@ -13,9 +13,9 @@ class SidePage extends CYComponent {
   }
   handleDisplay() {
     if (params) {
-      return false
+      return false;
     } else {
-      return true
+      return true;
     }
   }
   handleTitle() {
