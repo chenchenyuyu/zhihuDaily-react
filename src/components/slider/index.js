@@ -26,6 +26,8 @@ const IMAGE_DATA = [
   },
 ];
 
+// const DATA = this.all_stories;
+// console.log('data', DATA);
 class Slider extends CYComponent {
   constructor(props) {
     super(props);

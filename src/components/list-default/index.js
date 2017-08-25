@@ -1,8 +1,10 @@
 import React from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import CYComponent from '../base/index';
 import Slider from '../../components/slider/index';
 import ListItem from '../../components/list-item';
+import { getContentData } from "./actions";
+import API from '../../api/index';
 import './style.less';
 import Img from './images/chenyu.png';
 
@@ -13,8 +15,13 @@ const res = [
 ];
 
 class ListDefault extends CYComponent {
+  componentDidMount() {
+    const { dispatch }= this.props;
+    dispatch(getContentData(API.LATEST_NEWS));
+  }
   render() {
     // const dataList = res;
+    // const { dispatch, all_stories } = this.props;
     return (
       <div className="main-list">
         <Slider
@@ -43,5 +50,12 @@ class ListDefault extends CYComponent {
   }
 }
 
-export default ListDefault;
+const mapStateToProps = (state, ownProps) => ({
+  all_stories: state.content_list.all_stories,
+  top_stories: state.content_list.top_stories,
+});
+
+export default connect(
+  mapStateToProps,
+)(ListDefault);
 
