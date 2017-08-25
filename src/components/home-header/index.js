@@ -18,14 +18,14 @@ class HomeHeader extends CYComponent {
     }
   }
   toggleSidebar() {
-    if (this.props.dispatch) {
-      this.props.dispatch(toggleSidebar());
-    }
+    const { dispatch } = this.props;
+      dispatch(toggleSidebar());
+    console.log('tototooto', toggleSidebar());
   }
 
 
   render() {
-    const { title, iconDisplay } = this.props;
+    const { title, iconDisplay, active} = this.props;
     const className = this.classname('home-header');
     return (
       <div className={className}>
@@ -43,9 +43,15 @@ class HomeHeader extends CYComponent {
             );
           }
         })()}
+        <div onClick={this.toggleSidebar} className={active? "side-mask": ''} />
       </div>
     );
   }
 }
 
-export default connect()(HomeHeader);
+const mapStateToProps = (state, ownProps) => ({
+  active: state.sidebar.active,
+});
+export default connect(
+  mapStateToProps,
+)(HomeHeader);

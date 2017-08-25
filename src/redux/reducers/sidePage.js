@@ -9,7 +9,7 @@ export const sidebarList = (state = initState, action) => {
     case 'TOGGLE_SIDEBAR':
       return Object.assign({}, state, {
         ...state,
-        active: !state.active
+        active: !state.active,
       });
     default:
       return state;

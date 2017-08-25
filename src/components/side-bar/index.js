@@ -5,6 +5,7 @@ import CYComponent from '../base/index';
 import './style.less';
 import Img from '../list-default/images/chenyu.png';
 
+// 模拟侧边栏的数据
 const sideRes = [
   { name: 'aaa' },
   { name: 'bbb' },
@@ -18,13 +19,26 @@ const sideRes = [
   { name: 'aaddf' },
   { name: 'bbbdd' },
   { name: 'cccggg' },
+  { name: '1111111' },
+  { name: '2222' },
+  { name: '333' },
+  { name: '4444' },
+  { name: '555' },
+  { name: '666' },
+  { name: '777' },
+  { name: '8888' },
+  { name: '999' },
+  { name: '10000' },
 ];
 class SideBar extends CYComponent {
   render() {
-    const className = this.classname('side-bar');
+    // const className = this.classname('side-bar');
     // const sideList = sideRes;
+    console.log('this.props.activetffggghhh', this.props.active);
+    const { active } = this.props;
     return (
-      <div className={className}>
+      // {`slider-dot ${(i === nowLocal ? 'slider-dot-selected' : ' ')}`
+      <div className={ active ? "side-bar show-sidebar" : "side-bar"}>
         {/* 侧边栏的头部 */}
         <a>
           <div className="side-bar-header">
@@ -54,12 +68,16 @@ class SideBar extends CYComponent {
                 </li>
               </a>)
           }
-        </ul>
-
+          </ul>
       </div>
     );
   }
 }
+const mapStateToProps = (state, ownProps) => ({
+  active: state.sidebar.active,
+});
 
-export default connect(SideBar);
+export default connect(
+  mapStateToProps,
+)(SideBar);
 

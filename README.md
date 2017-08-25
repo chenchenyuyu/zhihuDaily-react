@@ -20,6 +20,13 @@
 * 打包编译生成静态资源
 
   npm run build
+# PLAN
+8.25日：
+
+1. 完成侧边栏sidePage页面，配置路由，模拟数据
+2. 引入redux，完成数据管理
+3. 完成默认主页面listDefault的数据导入
+4. 引入API数据
 
 # LISENCE
 本项目仅供交流和学习使用
