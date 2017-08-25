@@ -18,8 +18,8 @@ const sideRes = [
   { name: 'ccdff' },
   { name: 'aaddf' },
   { name: 'bbbdd' },
-  { name: 'cccggg' },
-  { name: '1111111' },
+  { name: 'cccgg' },
+  { name: '11111' },
   { name: '2222' },
   { name: '333' },
   { name: '4444' },
@@ -34,7 +34,7 @@ class SideBar extends CYComponent {
   render() {
     // const className = this.classname('side-bar');
     // const sideList = sideRes;
-    console.log('this.props.activetffggghhh', this.props.active);
+    console.log('this.props.active', this.props.active);
     const { active } = this.props;
     return (
       // {`slider-dot ${(i === nowLocal ? 'slider-dot-selected' : ' ')}`

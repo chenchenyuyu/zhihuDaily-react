@@ -12,8 +12,6 @@ const res = [
   { date: '2017-8-2', stories: [{ id: 4, title: '3333', pic: Img }, { id: 5, title: '2222', pic: Img }] },
 ];
 
-console.log('res', res);
-
 class ListDefault extends CYComponent {
   render() {
     // const dataList = res;

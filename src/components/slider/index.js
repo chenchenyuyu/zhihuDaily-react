@@ -1,5 +1,6 @@
 import React from 'react';
 import CYComponent from '../base/index';
+// import { connect } from '';
 import './style.less';
 
 import SliderArrows from './sliderArrows';

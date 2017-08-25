@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CYComponent from '../base/index';
-import { toggleSidebar } from "../../redux/actions/index";
+import { toggleSidebar } from "./actions";
 import './style.less';
 
 class HomeHeader extends CYComponent {
