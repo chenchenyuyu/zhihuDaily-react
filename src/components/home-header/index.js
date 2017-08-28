@@ -20,7 +20,7 @@ class HomeHeader extends CYComponent {
   toggleSidebar() {
     const { dispatch } = this.props;
       dispatch(toggleSidebar());
-    console.log('tototooto', toggleSidebar());
+    // console.log('tototooto', toggleSidebar());
   }
 
 

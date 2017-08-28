@@ -25,7 +25,17 @@ module.exports = {
     hot: true,
     port: defaultSettings.port,
     publicPath: defaultSettings.publicPath,
-    noInfo: false
+    inline: true, // 开启页面自动刷新功能
+    changeOrigin: true,
+    noInfo: false,
+      proxy: {    //跨域
+        '/v1/':  {
+          target: 'http://news-at.zhihu.com/',
+          pathRewrite: { '^/v1' : '' },
+          secure: false,
+          headers: { host: 'http://localhost:8000' },
+        },
+      }
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],

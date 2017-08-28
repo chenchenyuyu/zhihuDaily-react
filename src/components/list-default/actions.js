@@ -1,4 +1,4 @@
-// content actions
+// list-default actions
 import { axiosGet } from '../../utils/ajax';
 export const getContentListSuccess = (data) => {
   return {

@@ -6,7 +6,7 @@
 * react-router-dom
 * axios
 * less
-
+* icon : 使用阿里图标库
 # Usage
 
 * 项目根目录安装依赖

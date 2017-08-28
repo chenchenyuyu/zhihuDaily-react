@@ -16,12 +16,14 @@ const res = [
 
 class ListDefault extends CYComponent {
   componentDidMount() {
-    const { dispatch }= this.props;
-    dispatch(getContentData(API.LATEST_NEWS));
+    const { dispatch } = this.props;
+    // console.log('api.last_news', getContentData(API.LATEST_NEWS).data.top_stories);
+    console.log('00000', dispatch(getContentData(API.LATEST_NEWS)));
   }
   render() {
     // const dataList = res;
-    // const { dispatch, all_stories } = this.props;
+     const { all_stories } = this.props;
+     console.log('all_stories', all_stories);
     return (
       <div className="main-list">
         <Slider
@@ -51,7 +53,7 @@ class ListDefault extends CYComponent {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  all_stories: state.content_list.all_stories,
+  // all_stories: state.content_list.all_stories,
   top_stories: state.content_list.top_stories,
 });
 
