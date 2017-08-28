@@ -7,6 +7,7 @@ import './style.less';
  class ListItem extends CYComponent {
   render() {
     const item = this.props.item;
+   // console.log('this.props.item', this.props.item);
     return (
       <a className="list-item-wrap">
         <div className="list-item-wrap">
