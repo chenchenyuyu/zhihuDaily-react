@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import ListDefault from 'components/list-default/index';
 // import { pageUrl } from './utils/url';
 import SidePage from "./pages/sidePage/index";
-
+import DetailPage from './pages/detailPage/index';
 
 // const pages = [
 //   {
@@ -23,11 +23,14 @@ class App extends React.Component {
     return (
       <div>
         <Router>
+          <Switch>
             <SidePage>
               <Switch>
                 <Route exact path='/' component={ListDefault} />
               </Switch>
             </SidePage>
+            <Route path="/detail/:id" component={DetailPage} />
+          </Switch>
         </Router>
       </div>
     )
