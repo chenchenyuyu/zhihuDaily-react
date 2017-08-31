@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
+  Redirect,
 } from 'react-router-dom';
 import '../src/common/app.less';
 import { connect } from 'react-redux';
@@ -24,12 +25,11 @@ class App extends React.Component {
       <div>
         <Router>
           <Switch>
-            <SidePage>
               <Switch>
-                <Route exact path='/' component={ListDefault} />
+                <Route exact path='/' component={SidePage(ListDefault)} />
+                <Route path='/detail/:id' component={DetailPage} />
+                <Redirect to='/' />
               </Switch>
-            </SidePage>
-            <Route path="/detail/:id" component={DetailPage} />
           </Switch>
         </Router>
       </div>
