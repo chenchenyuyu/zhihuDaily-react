@@ -11,6 +11,7 @@ import ListDefault from 'components/list-default/index';
 // import { pageUrl } from './utils/url';
 import SidePage from "./pages/sidePage/index";
 import DetailPage from './pages/detailPage/index';
+import ListTheme from 'components/list-theme';
 
 // const pages = [
 //   {
@@ -29,6 +30,7 @@ class App extends React.Component {
             <Route exact path='/' component={ListDefault} />
             </SidePage>
             <Route path='/detail/:id' component={DetailPage} />
+            <Route path='/theme/:id' component={ListTheme} />
             <Redirect to='/' />
           </div>
         </Router>

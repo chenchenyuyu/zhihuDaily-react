@@ -7,12 +7,12 @@ import Img from '../list-default/images/chenyu.png';
 
 // 模拟侧边栏的数据
 const sideRes = [
-  { name: 'aaa' },
-  { name: 'bbb' },
-  { name: 'ccc' },
-  { name: 'ddd' },
-  { name: 'bb' },
-  { name: 'cc' },
+  { name: 'aaa', id: 0},
+  { name: 'bbb', id: 1},
+  { name: 'ccc', id: 2},
+  { name: 'ddd', id: 3},
+  { name: 'bb', id: 4},
+  { name: 'cc', id: 5},
   { name: 'aa' },
   { name: 'fdfbb' },
   { name: 'ccdff' },
@@ -61,12 +61,12 @@ class SideBar extends CYComponent {
         <ul className="side-bar-list">
           {
             sideRes.map(item =>
-              <a key={item.name}>
+              <Link key={item.name} to={`/theme/${item.id}`}>
                 <li>
                   <p>{item.name}</p>
                   <span className="iconfont addIcon">&#xe6df;</span>
                 </li>
-              </a>)
+              </Link>)
           }
           </ul>
       </div>
