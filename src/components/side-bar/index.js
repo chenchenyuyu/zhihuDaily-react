@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CYComponent from '../base/index';
 import './style.less';
@@ -45,7 +45,7 @@ class SideBar extends CYComponent {
             <div className="user">
               <img src={Img} alt="avatar" />
               <span>chenyu</span>
-              <a><i className="iconfont home">&#xe606;</i></a>
+              <Link to='/'><i className="iconfont home">&#xe606;</i></Link>
             </div>
             <div className="collection">
               <i className="iconfont">&#xe86e;</i>
