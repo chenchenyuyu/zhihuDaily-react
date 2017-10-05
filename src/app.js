@@ -3,7 +3,6 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
   Redirect,
 } from 'react-router-dom';
 import '../src/common/app.less';
@@ -20,17 +19,18 @@ import DetailPage from './pages/detailPage/index';
 //   },
 // ];
 class App extends React.Component {
+  // 注意嵌套路由当中Switch的使用
   render() {
     return (
       <div>
         <Router>
-          <Switch>
-              <Switch>
-                <Route exact path='/' component={SidePage(ListDefault)} />
-                <Route path='/detail/:id' component={DetailPage} />
-                <Redirect to='/' />
-              </Switch>
-          </Switch>
+          <div>
+            <SidePage>
+            <Route exact path='/' component={ListDefault} />
+            </SidePage>
+            <Route path='/detail/:id' component={DetailPage} />
+            <Redirect to='/' />
+          </div>
         </Router>
       </div>
     )

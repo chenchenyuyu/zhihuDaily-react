@@ -1,6 +1,6 @@
 import React from 'react';
 import CYComponent from '../base/index';
-// import { connect } from '';
+import { connect } from 'react-redux';
 import './style.less';
 
 import SliderArrows from './sliderArrows';
@@ -25,6 +25,8 @@ const IMAGE_DATA = [
     alt: 'img3',
   },
 ];
+// const images = this.props.slider;
+// console.log('silidr-images', images);
 
 // const DATA = this.all_stories;
 // console.log('data', DATA);
@@ -113,4 +115,8 @@ Slider.defaultProps = {
 };
 
 Slider.autoPlayFlag = null;
-export default Slider;
+export default connect((state) => {
+  return {
+    slider: state.content_list.top_stories
+  };
+})(Slider);
