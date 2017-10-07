@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CYComponent from '../base/index';
+import { toggleSidebar } from '../../redux/actions/index';
 import './style.less';
 import Img from '../list-default/images/chenyu.png';
 
@@ -31,6 +32,15 @@ const sideRes = [
   { name: '10000' },
 ];
 class SideBar extends CYComponent {
+  constructor(props) {
+    super(props);
+    this.autoBind('toggleSidebar');
+  }
+  toggleSidebar() {
+    const { dispatch } = this.props;
+    dispatch(toggleSidebar());
+  }
+
   render() {
     // const className = this.classname('side-bar');
     // const sideList = sideRes;
@@ -62,7 +72,7 @@ class SideBar extends CYComponent {
           {
             sideRes.map(item =>
               <Link key={item.name} to={`/theme/${item.id}`}>
-                <li>
+                <li onClick={this.toggleSidebar}>
                   <p>{item.name}</p>
                   <span className="iconfont addIcon">&#xe6df;</span>
                 </li>
